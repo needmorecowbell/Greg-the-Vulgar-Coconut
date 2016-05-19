@@ -4,19 +4,20 @@ using System.Collections;
 public class BirdMovement : MonoBehaviour {
 	public float upForce;			//upward force of the "flap"
 	public float forwardSpeed;		//forward movement speed
-	public float delay= .25f;
+	public float delay= 2f;
 	public bool isDead = false;		//has the player collided with a wall?
 	public bool isLeft= false;
 	Animator anim;					//reference to the animator component
 	bool flap = false;				//has the player triggered a "flap"?
-
-
+	private AudioSource audio;
+	public AudioClip hurt;
 	void Start()
 	{
 		//get reference to the animator component
 		anim = GetComponent<Animator> ();
 		//set the bird moving forward
 		GetComponent<Rigidbody2D>().velocity = new Vector2 (forwardSpeed, 0);
+		audio = GetComponent<AudioSource> ();
 	}
 
 	void Update()
@@ -57,10 +58,15 @@ public class BirdMovement : MonoBehaviour {
 		}
 		//...tell the animator about it...
 		if(other.gameObject.tag == "Player"){
-			anim.SetTrigger ("Die");
-			//...and tell the game control about it
-			Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).length + delay); 
-			GameControlScript.current.BirdDied ();
+
+			if (gameObject.GetComponent<BoxCollider2D>().IsTouching(other.gameObject.GetComponent<CircleCollider2D>())){ //is player hitting top of bird
+				//audio.PlayOneShot (hurt);
+				anim.SetTrigger ("Die");
+				//...and tell the game control about it
+				Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(1).length + delay); 
+				GameControlScript.current.BirdDied ();
+			}
+
 
 
 		}

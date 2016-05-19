@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour {
 	public AudioClip[] hurtClips;
 	public AudioClip[] angerClips;
 	private AudioSource audio;
-
+	public AudioClip[] successClips;
 
 	void Start(){
 		rb = GetComponent<Rigidbody2D> ();
@@ -36,18 +36,29 @@ public class PlayerMovement : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col){
 		
-		if (col.gameObject.tag == "Ground") {
+		if (col.gameObject.tag == "Ground" || (col.gameObject.tag=="Wall"&&col.gameObject.GetComponent<BoxCollider2D>().IsTouching(gameObject.GetComponent<CircleCollider2D>()))) {
 			isJumping = false;
 			if (Mathf.Abs (rb.velocity.y) > 10) {
-				audio.PlayOneShot (hurtClips [1]);
+				audio.PlayOneShot (hurtClips [Random.Range (0, hurtClips.Length - 1)]);
 			}
 
 		} else if (col.gameObject.tag == "Wall") {
-			audio.PlayOneShot (angerClips [0]);
-		}
-		if (col.gameObject.tag == "Finish") {
-			Debug.Log ("Game Complete");
+			if (!col.gameObject.GetComponent<BoxCollider2D> ().IsTouching (GetComponent<CircleCollider2D> ())) {
+				audio.PlayOneShot (angerClips [Random.Range (0, hurtClips.Length - 1)]);
+			}
 
+		}else if (col.gameObject.tag == "EnemyBird") {
+			if (gameObject.GetComponent<CircleCollider2D> ().IsTouching (col.gameObject.GetComponent<EdgeCollider2D> ())) {//is player touching the sides of bird
+				audio.PlayOneShot (hurtClips [Random.Range (0, hurtClips.Length - 1)]);
+				//DIE? LOSE A HEART?
+			} else {
+				Debug.Log ("GOTEEEM");
+				audio.PlayOneShot (successClips [Random.Range (0, successClips.Length - 1)]);
+			}
+		}else if (col.gameObject.tag == "Finish") {
+			
+			Debug.Log ("Game Complete");
+			audio.PlayOneShot (successClips [Random.Range (0, successClips.Length - 1)]);
 		}
 	}
 }
