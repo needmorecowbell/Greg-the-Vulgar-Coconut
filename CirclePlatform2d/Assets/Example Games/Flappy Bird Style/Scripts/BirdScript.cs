@@ -25,8 +25,7 @@ public class BirdScript : MonoBehaviour
 		if (isDead)
 			return;
 		//look for input to trigger a "flap"
-		if (Input.anyKeyDown)
-			flap = true;
+		flap = true;
 	}
 
 	void FixedUpdate()
