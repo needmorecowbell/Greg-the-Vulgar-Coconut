@@ -76,6 +76,7 @@
      <Compile Include="Assets\Example Games\Hat Trick - The Catch Game\Scripts\HT_SetParticleSortingLayer.cs" />
      <Compile Include="Assets\Example Games\Hat Trick - The Catch Game\Scripts\HT_StartGame.cs" />
      <Compile Include="Assets\Scripts\BirdMovement.cs" />
+     <Compile Include="Assets\Scripts\BombLogic.cs" />
      <Compile Include="Assets\Scripts\CameraFollowTarget.cs" />
      <Compile Include="Assets\Scripts\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\KillOnAnimation.cs" />

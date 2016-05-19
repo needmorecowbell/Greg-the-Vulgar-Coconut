@@ -40,7 +40,7 @@ public class BirdMovement : MonoBehaviour {
 			anim.SetTrigger("Flap");
 			//...zero out the birds current y velocity before...
 			if (isLeft) {
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (-(GetComponent<Rigidbody2D> ().velocity.x), 0);
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (-(GetComponent<Rigidbody2D> ().velocity.x), 0);//TODO FIX RIGHT MOVEMENT
 			} else {
 				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
 			}
