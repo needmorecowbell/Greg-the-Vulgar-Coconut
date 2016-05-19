@@ -7,11 +7,14 @@ public class PlayerMovement : MonoBehaviour {
 	private bool isJumping = false;
 	public float speed;
 	public float jumpHeight;
-
+	public AudioClip[] hurtClips;
+	public AudioClip[] angerClips;
+	private AudioSource audio;
 
 
 	void Start(){
 		rb = GetComponent<Rigidbody2D> ();
+		audio = GetComponent<AudioSource> ();
 	}
 
 	// Update is called once per frame
@@ -26,6 +29,7 @@ public class PlayerMovement : MonoBehaviour {
 			}
 
 		}
+
 		Vector2 movement = new Vector2 (moveHorizontal,moveVertical);
 		rb.AddForce (movement*speed);
 	}
@@ -34,6 +38,12 @@ public class PlayerMovement : MonoBehaviour {
 		
 		if (col.gameObject.tag == "Ground") {
 			isJumping = false;
+			if (Mathf.Abs (rb.velocity.y) > 10) {
+				audio.PlayOneShot (hurtClips [1]);
+			}
+
+		} else if (col.gameObject.tag == "Wall") {
+			audio.PlayOneShot (angerClips [0]);
 		}
 		if (col.gameObject.tag == "Finish") {
 			Debug.Log ("Game Complete");
