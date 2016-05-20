@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\CameraFollowTarget.cs" />
      <Compile Include="Assets\Scripts\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\KillOnAnimation.cs" />
+     <Compile Include="Assets\Scripts\MushroomLogic.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <None Include="Assets\Example Games\Flappy Bird Style\_ReadMe.txt" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />

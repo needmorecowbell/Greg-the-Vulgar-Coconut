@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BombLogic : MonoBehaviour {
+public class MushroomLogic : MonoBehaviour {
 	private float timeEnd=0;
 	private bool isAffected = false;
 	public float duration = 5f;
 	private bool didOnce= false;
 	// Use this for initialization
 	void Start () {
-
+		
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
-
+		
 		if (isAffected) {
 			if (!didOnce) {
 				timeEnd = Time.time + duration;
@@ -22,12 +22,11 @@ public class BombLogic : MonoBehaviour {
 
 
 			if (Time.time <= timeEnd) {
-				Debug.Log (timeEnd-Time.time);
+				Debug.Log ("Woahhhh");
 				//do graphical animation
 
 			}
 			if (Time.time >= timeEnd) {
-				Debug.Log ("BOOM!");
 				isAffected = false;
 				Destroy (gameObject);
 			}
@@ -38,11 +37,9 @@ public class BombLogic : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.tag == "Player") {
-
+			
 			isAffected=true;
 		}
 	}
 
 }
-
-
