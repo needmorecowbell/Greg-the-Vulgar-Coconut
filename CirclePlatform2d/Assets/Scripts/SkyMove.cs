@@ -21,7 +21,7 @@ public class SkyMove : MonoBehaviour {
 			float newPos = Mathf.Repeat (Time.time * scrollSpeed, size);
 			transform.position = startPos + Vector3.left * newPos;
 			//isLeft = false;
-			Debug.Log (newPos);
+
 
 		} else {
 			float newPos = Mathf.Repeat (Time.time * scrollSpeed, size);

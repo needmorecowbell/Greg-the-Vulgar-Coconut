@@ -81,6 +81,7 @@
      <Compile Include="Assets\Scripts\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\KillOnAnimation.cs" />
      <Compile Include="Assets\Scripts\MushroomLogic.cs" />
+     <Compile Include="Assets\Scripts\MusicBehaviour.cs" />
      <Compile Include="Assets\Scripts\PlayButtonLogic.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\SkyMove.cs" />
