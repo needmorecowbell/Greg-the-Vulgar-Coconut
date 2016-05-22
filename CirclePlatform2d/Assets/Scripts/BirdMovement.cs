@@ -40,9 +40,9 @@ public class BirdMovement : MonoBehaviour {
 			anim.SetTrigger("Flap");
 			//...zero out the birds current y velocity before...
 			if (isLeft) {
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (-(GetComponent<Rigidbody2D> ().velocity.x), 0);//TODO FIX RIGHT MOVEMENT
+				GetComponent<Rigidbody2D>().velocity = new Vector2 (-forwardSpeed, 0);
 			} else {
-				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
+				GetComponent<Rigidbody2D>().velocity = new Vector2(forwardSpeed, 0);
 			}
 
 			//..giving the bird some upward force
@@ -53,8 +53,10 @@ public class BirdMovement : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		
-		if (other.gameObject.tag == "Ground") {
+		if (other.gameObject.tag == "Wall") {
 			isLeft = !isLeft;
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+			GetComponent<SpriteRenderer> ().flipX = !(GetComponent<SpriteRenderer> ().flipX);
 		}
 		//...tell the animator about it...
 		if(other.gameObject.tag == "Player"){
