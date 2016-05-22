@@ -1,16 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BirdMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PortalBehavior.cs">
     <Files>
-      <File FileName="Assets\Scripts\MusicBehaviour.cs" Line="6" Column="7" />
-      <File FileName="Assets\Scripts\MushroomLogic.cs" Line="61" Column="4" />
+      <File FileName="Assets\Scripts\PortalBehavior.cs" Line="11" Column="1" />
       <File FileName="Assets\Scripts\PlayButtonLogic.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MusicBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MushroomLogic.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraFollowTarget.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BirdMovement.cs" Line="59" Column="36" />
+      <File FileName="Assets\Scripts\BirdMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BombLogic.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Example Games\Flappy Bird Style\Scripts\GameControlScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MusicBehaviourPlayState.cs" Line="12" Column="21" />
+      <File FileName="Assets\Scripts\MusicBehaviourPlayState.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
