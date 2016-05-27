@@ -53,11 +53,11 @@ public class BirdMovement : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		
-		if (other.gameObject.tag == "Wall") {
+		//if (other.gameObject.tag == "Wall") {
 			isLeft = !isLeft;
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
 			GetComponent<SpriteRenderer> ().flipX = !(GetComponent<SpriteRenderer> ().flipX);
-		}
+		//}
 		//...tell the animator about it...
 		if(other.gameObject.tag == "Player"){
 

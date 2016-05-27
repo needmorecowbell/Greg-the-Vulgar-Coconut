@@ -1,15 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PortalBehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MushroomLogic.cs">
     <Files>
-      <File FileName="Assets\Scripts\PortalBehavior.cs" Line="11" Column="1" />
+      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PortalBehavior.cs" Line="2" Column="10" />
       <File FileName="Assets\Scripts\PlayButtonLogic.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MusicBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MushroomLogic.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraFollowTarget.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BirdMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BombLogic.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Example Games\Flappy Bird Style\Scripts\GameControlScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MusicBehaviourPlayState.cs" Line="1" Column="1" />
     </Files>
